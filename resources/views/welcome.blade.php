@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>
- <a href="{{ route (name :'profile') }}">profile</a>
+ <a href="{{ route (name :'profile.edit') }}">profile</a>
 </body>
 </html>
