@@ -30,6 +30,8 @@ Route::get('/product', [ProductController::class,'index']);
 // Route::get('/product/{id}', [ProductController::class,'update']);
 // Route::get('/product/{id}', [ProductController::class,'destroy']);
 
+route::get('/product/{id}', [ProductController::class,'index']);
+
 
 
 require __DIR__.'/auth.php';
