@@ -72,6 +72,8 @@ class Kernel implements KernelContract
      */
     protected $routeMiddleware = [
         'RoleCheck' => \App\Http\Middleware\RoleCheck::class,
+        'role' => \App\Http\Middleware\RoleMiddleware::class,
+
     ];
 
     /**

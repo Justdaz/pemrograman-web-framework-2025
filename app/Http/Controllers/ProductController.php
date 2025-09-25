@@ -10,11 +10,10 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index($id)
+    public function index($angka)
     {
-        return view('barang',[
-            'isi_data' => $id
-        ]);
+        $hasil = $angka + 3;
+        return view('product.index', compact('hasil'));
     }
 
     /**

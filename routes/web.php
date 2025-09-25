@@ -10,11 +10,11 @@ Route::get('/', function () {
 
 Route::get('/rahasia', function(){
     return 'ini halaman rahasia';
-})->middleware(['auth','RoleCheck:admin']);
+})->middleware(['auth','RoleCheck:admin,owner']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified','RoleCheck:admin'])->name('dashboard');
+})->middleware(['auth', 'verified','RoleCheck:admin,owner'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -31,6 +31,9 @@ Route::get('/product', [ProductController::class,'index']);
 // Route::get('/product/{id}', [ProductController::class,'destroy']);
 
 route::get('/product/{id}', [ProductController::class,'index']);
+
+Route::get('/product/{angka}', [ProductController::class, 'index'])
+    ->middleware(['auth', 'role:admin,owner']);
 
 
 
