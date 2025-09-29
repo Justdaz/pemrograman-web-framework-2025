@@ -7,8 +7,12 @@
 </head>
 <body>
     @section('content')
-    <h1>Untuk jawaban Nomor 1</h1>
+    <h1>Soal UTS Raffi Deas Alvaro</h1>
 
+    <ul>
+        <li><a href="{{ route('uts.web') }}">Menu uts pemrograman web</a></li>
+        <li><a href="{{ route('uts.database') }}">Menu uts database</a></li>
+    </ul>
     @endsection
 </body>
 </html>

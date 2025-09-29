@@ -1,4 +1,4 @@
 <footer>
     <hr>
-    <p>Halaman UTS</p>
+    <p>ini footernya</p>
 </footer>

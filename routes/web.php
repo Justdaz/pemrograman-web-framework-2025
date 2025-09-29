@@ -50,6 +50,9 @@ Route::get('/uts', function () {
 });
 
 Route::get('/uts', [UtsController::class, 'index']);
+Route::get('/uts/web', [UtsController::class, 'web'])->name('uts.web');
+Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.database');
+
 
 
 require __DIR__.'/auth.php';
