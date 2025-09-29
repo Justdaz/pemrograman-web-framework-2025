@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UtsController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -47,6 +48,8 @@ Route::get('/child', function () {
 Route::get('/uts', function () {
     return view('uts.index');
 });
+
+Route::get('/uts', [UtsController::class, 'index']);
 
 
 require __DIR__.'/auth.php';
