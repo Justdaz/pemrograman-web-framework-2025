@@ -44,5 +44,9 @@ Route::get('/child', function () {
     return view('test.child');
 });
 
+Route::get('/uts', function () {
+    return view('uts.index');
+});
+
 
 require __DIR__.'/auth.php';
