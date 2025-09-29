@@ -36,5 +36,13 @@ Route::get('/product/{angka}', [ProductController::class, 'index'])
     ->middleware(['auth', 'role:admin,owner']);
 
 
+Route::get('/demo-template', function () {
+    return view('test.home');
+});
+
+Route::get('/child', function () {
+    return view('test.child');
+});
+
 
 require __DIR__.'/auth.php';
