@@ -53,6 +53,7 @@ Route::get('/uts', [UtsController::class, 'index'])->name('uts.index');
 Route::get('/uts/web', [UtsController::class, 'web'])->name('uts.web');
 Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.database');
 
+Route::get('/ganjap/{value}', [ProductController::class, 'show'])->name('ganjap.show');
 
 
 require __DIR__.'/auth.php';

@@ -35,9 +35,26 @@ class ProductController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show($value)
     {
-        //
+        if (!is_numeric($value)) {
+            $message = 'Parameter bukan angka';
+            $type = 'warning';
+            return view('ganjap', compact('message', 'type'));
+        }
+
+        $number = (int) $value;
+
+        if ($number % 2 === 0) {
+            $message = 'Nilai ini adalah genap';
+            $type = 'success';
+        } else {
+            $message = 'Nilai ini adalah ganjil';
+            $type = 'warning';
+        }
+
+        return view('ganjap', compact('message', 'type'));
+
     }
 
     /**
