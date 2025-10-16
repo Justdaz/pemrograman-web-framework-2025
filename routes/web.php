@@ -23,7 +23,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/product', [ProductController::class,'index']);
+// Route::get('/product', [ProductController::class,'index']);
 // Route::get('/product/create', [ProductController::class,'create']);
 // Route::get('/product', [ProductController::class,'store']);
 // Route::get('/product/{id}', [ProductController::class,'show']);
@@ -31,10 +31,10 @@ Route::get('/product', [ProductController::class,'index']);
 // Route::get('/product/{id}', [ProductController::class,'update']);
 // Route::get('/product/{id}', [ProductController::class,'destroy']);
 
-route::get('/product/{id}', [ProductController::class,'index']);
+// route::get('/product/{id}', [ProductController::class,'index']);
 
-Route::get('/product/{angka}', [ProductController::class, 'index'])
-    ->middleware(['auth', 'role:admin,owner']);
+// Route::get('/product/{angka}', [ProductController::class, 'index'])
+//     ->middleware(['auth', 'role:admin,owner']);
 
 
 Route::get('/demo-template', function () {
@@ -55,5 +55,7 @@ Route::get('/uts/database', [UtsController::class, 'database'])->name('uts.datab
 
 Route::get('/ganjap/{value}', [ProductController::class, 'show'])->name('ganjap.show');
 
+Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
+Route::post('/product', [ProductController::class, 'store'])->name('product-store');
 
 require __DIR__.'/auth.php';
