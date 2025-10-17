@@ -58,4 +58,9 @@ Route::get('/ganjap/{value}', [ProductController::class, 'show'])->name('ganjap.
 Route::get('/product/create', [ProductController::class, 'create'])->name('product-create');
 Route::post('/product', [ProductController::class, 'store'])->name('product-store');
 
+route::get('/product', [ProductController::class, 'index'])->name('product-index');
+route::get('/product/{id}/edit', [ProductController::class, 'edit'])->name('product-edit');
+route::put('/product/{id}', [ProductController::class, 'update'])->name('product-update');
+route::delete('/product/{id}', [ProductController::class, 'destroy'])->name('product-destroy');
+
 require __DIR__.'/auth.php';
